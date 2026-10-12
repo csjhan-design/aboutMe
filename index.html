@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>詹老師 - 智慧桃園個人網站</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        en: ['"Outfit"', 'sans-serif'],
+                    },
+                    colors: {
+                        cyber: {
+                            cyan: '#00f2fe',
+                            blue: '#4facfe',
+                            purple: '#c026d3',
+                            pink: '#ff0844'
+                        }
+                    },
+                    animation: {
+                        blob: "blob 7s infinite",
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #050505; /* 極致黑底色 */
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        /* 玻璃面板風格 */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glass-panel:hover {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        /* 賽博龐克漸層字體 */
+        .gradient-text {
+            background: linear-gradient(135deg, #00f2fe, #4facfe, #c026d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease infinite;
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* 動態背景延遲 */
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyber-cyan selection:text-black">
+
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 -left-4 w-72 h-72 bg-cyber-purple rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob"></div>
+        <div class="absolute top-0 -right-4 w-72 h-72 bg-cyber-cyan rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-cyber-blue rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 transition-all duration-300 pt-4 px-4 flex justify-center" id="navbar">
+        <div class="glass-panel rounded-full px-6 py-3 flex justify-between items-center w-full max-w-4xl mx-auto transition-all duration-300">
+            <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="window.scrollTo(0,0)">
+                <div class="flex items-center gap-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-cyber-cyan animate-ping"></span>
+                    <span class="font-bold text-base md:text-lg tracking-wider text-white group-hover:text-cyber-cyan transition-colors">智慧桃園 桃園智慧 詹老師</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-sm font-en tracking-widest text-gray-400 hover:text-cyber-cyan transition-colors">ABOUT</a>
+                <a href="#experience" class="text-sm font-en tracking-widest text-gray-400 hover:text-cyber-cyan transition-colors">EXPERIENCE</a>
+                <a href="#portfolio" class="text-sm font-en tracking-widest text-gray-400 hover:text-cyber-cyan transition-colors">PORTFOLIO</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="relative z-10 pt-24 md:pt-28 pb-16 md:pb-24 px-4">
+        <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
+            <!-- 文字簡介 -->
+            <div class="flex-1 text-center md:text-left space-y-8">
+                <div class="inline-block glass-panel px-4 py-1.5 rounded-full mb-2">
+                    <span class="text-xs font-en tracking-widest text-cyber-cyan uppercase"><i class="fa-solid fa-sparkles mr-2"></i>AI Educator & Developer</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight">
+                    <span class="text-white">智慧桃園</span><br>
+                    <span class="gradient-text">桃園智慧 詹老師</span>
+                </h1>
+                <p class="text-lg text-gray-400 max-w-xl mx-auto md:mx-0 font-light leading-relaxed">
+                    致力於人工智慧、程式設計與網頁開發。透過科技與教育的結合，為桃園帶來智慧的火花，並不斷探索 AI 的無限可能。
+                </p>
+                
+                <!-- 聯絡按鈕群 (潮酷風格) -->
+                <div class="flex flex-row gap-4 justify-center md:justify-start items-center pt-4">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/share/1FUjxsm4e3/" target="_blank" rel="noopener noreferrer" 
+                       class="group relative w-12 h-12 flex items-center justify-center rounded-full glass-panel hover:bg-[#1877F2]/20 hover:border-[#1877F2]/50 transition-all duration-300" title="Facebook 粉絲專頁">
+                        <i class="fa-brands fa-facebook-f text-xl text-gray-300 group-hover:text-[#1877F2] transition-colors"></i>
+                    </a>
+                    <!-- LINE -->
+                    <a href="https://line.me/ti/p/~csjhan" target="_blank" rel="noopener noreferrer"
+                       class="group relative w-12 h-12 flex items-center justify-center rounded-full glass-panel hover:bg-[#06C755]/20 hover:border-[#06C755]/50 transition-all duration-300" title="加 LINE 好友 (ID: csjhan)">
+                        <i class="fa-brands fa-line text-2xl text-gray-300 group-hover:text-[#06C755] transition-colors"></i>
+                    </a>
+                    <!-- Gmail -->
+                    <a href="mailto:c.s.jhan@gmail.com" 
+                       class="group relative w-12 h-12 flex items-center justify-center rounded-full glass-panel hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-300" title="發送 Email">
+                        <i class="fa-solid fa-envelope text-xl text-gray-300 group-hover:text-red-400 transition-colors"></i>
+                    </a>
+                </div>
+
+                <div class="pt-4 flex justify-center md:justify-start">
+                    <a href="#portfolio" 
+                       class="relative inline-flex items-center justify-center px-8 py-3 text-sm font-bold tracking-widest uppercase text-white bg-white/10 rounded-full overflow-hidden group hover:bg-white/20 transition-all border border-white/10 hover:border-cyber-cyan/50">
+                        <span class="relative z-10 flex items-center gap-2">
+                            Explore Works <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 個人照片 -->
+            <div class="flex-1 relative flex justify-center w-full max-w-sm md:max-w-md -mt-6 md:-mt-12">
+                <div class="relative group w-full flex flex-col items-center">
+                    
+                    <!-- 背後的動態光暈 (呼吸燈效果) -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-cyber-cyan to-cyber-purple rounded-full blur-[70px] opacity-35 group-hover:opacity-65 transition duration-1000 group-hover:duration-300 animate-pulse"></div>
+                    
+                    <!-- 圖片容器 (帶有底部漸層淡出效果) -->
+                    <div class="relative z-10 w-full flex justify-end pr-2 md:pr-4" style="-webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%); mask-image: linear-gradient(to bottom, black 75%, transparent 100%);">
+                        <!-- 去背透明 PNG 圖片 -->
+                        <img src="https://files.catbox.moe/clhtb0.png" 
+                             alt="詹老師的照片" 
+                             class="relative z-10 w-64 h-auto md:w-80 object-contain drop-shadow-[0_0_20px_rgba(0,242,254,0.45)] group-hover:drop-shadow-[0_0_40px_rgba(192,38,211,0.7)] transition-all duration-700 group-hover:scale-[1.03]"
+                             onerror="this.src='https://placehold.co/400x600/0f172a/ffffff?text=Photo';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 學經歷與專業認證專區 -->
+    <section id="experience" class="relative z-10 py-20 px-4 border-t border-white/5 bg-black/40">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-14 text-center">
+                <div class="inline-block glass-panel px-4 py-1 rounded-full mb-3">
+                    <span class="text-xs font-en tracking-widest text-emerald-400 uppercase">
+                        <i class="fa-solid fa-certificate mr-1.5"></i>Career & Credentials
+                    </span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-3">實務淬鍊與<span class="gradient-text">養成</span></h2>
+                <p class="text-gray-400 text-sm md:text-base">從扎實工科背景、跨領域實務歷練，到前沿 AI 專業合格</p>
+            </div>
+
+            <!-- 兩欄式排版：左欄為直式時間軸（工作與學歷），右欄為專業培訓與認證 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+                
+                <!-- 左欄：工作與學歷歷程（直式時間軸） -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6 px-1">
+                        <div class="w-8 h-8 rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan">
+                            <i class="fa-solid fa-timeline"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white tracking-wide">學經歷</h3>
+                    </div>
+
+                    <!-- 直式時間軸容器 -->
+                    <div class="relative border-l-2 border-white/10 ml-4 md:ml-5 space-y-7 pl-6 md:pl-7">
+
+                        <!-- 時間軸項目 1：電商物流 -->
+                        <div class="relative group">
+                            <!-- 時間軸亮點節點 -->
+                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyber-purple border-2 border-black shadow-[0_0_12px_rgba(192,38,211,0.8)] group-hover:scale-125 transition-transform"></div>
+                            
+                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-cyber-purple/40 transition-all duration-300">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-cyber-purple bg-cyber-purple/10 border border-cyber-purple/30">
+                                        工作經歷
+                                    </span>
+                                    <span class="text-xs text-gray-400 font-en">供應鏈與運營</span>
+                                </div>
+                                <h4 class="text-base font-bold text-white group-hover:text-cyber-purple transition-colors">知名中小型電商</h4>
+                                <p class="text-sm text-gray-300 font-medium mt-0.5">倉儲物流部門</p>
+                                <p class="text-xs text-gray-400 mt-2 leading-relaxed">掌握庫存調配、物流動線與高效率出貨管理。</p>
+                            </div>
+                        </div>
+
+                        <!-- 時間軸項目 2：ITO 製造廠 -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyber-blue border-2 border-black shadow-[0_0_12px_rgba(79,172,254,0.8)] group-hover:scale-125 transition-transform"></div>
+                            
+                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-cyber-blue/40 transition-all duration-300">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-cyber-blue bg-cyber-blue/10 border border-cyber-blue/30">
+                                        工作經歷
+                                    </span>
+                                    <span class="text-xs text-gray-400 font-en">光電材料與品管</span>
+                                </div>
+                                <h4 class="text-base font-bold text-white group-hover:text-cyber-blue transition-colors">手機螢幕 ITO 製造廠</h4>
+                                <p class="text-sm text-gray-300 font-medium mt-0.5">品保部門 (QA/QC)</p>
+                                <p class="text-xs text-gray-400 mt-2 leading-relaxed">執行精密檢驗、良率把關與異常分析管控流程。</p>
+                            </div>
+                        </div>
+
+                        <!-- 時間軸項目 3：印刷電路板廠 -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyber-cyan border-2 border-black shadow-[0_0_12px_rgba(0,242,254,0.8)] group-hover:scale-125 transition-transform"></div>
+                            
+                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-cyber-cyan/40 transition-all duration-300">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-cyber-cyan bg-cyber-cyan/10 border border-cyber-cyan/30">
+                                        工作經歷
+                                    </span>
+                                    <span class="text-xs text-gray-400 font-en">硬體製造製程</span>
+                                </div>
+                                <h4 class="text-base font-bold text-white group-hover:text-cyber-cyan transition-colors">印刷電路板廠 (PCB)</h4>
+                                <p class="text-sm text-gray-300 font-medium mt-0.5">設備工程師</p>
+                                <p class="text-xs text-gray-400 mt-2 leading-relaxed">負責機台設備運轉維護、製程調校與穩定度優化。</p>
+                            </div>
+                        </div>
+
+                        <!-- 時間軸項目 4：淡江大學 電機工程學系 -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-blue-400 border-2 border-black shadow-[0_0_12px_rgba(96,165,250,0.8)] group-hover:scale-125 transition-transform"></div>
+                            
+                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-blue-400/40 transition-all duration-300">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-blue-300 bg-blue-500/10 border border-blue-500/30">
+                                        學歷背景
+                                    </span>
+                                    <span class="text-xs text-gray-400 font-en">大學部</span>
+                                </div>
+                                <h4 class="text-base font-bold text-white group-hover:text-blue-300 transition-colors">淡江大學</h4>
+                                <p class="text-sm text-gray-300 mt-0.5 font-medium">電機工程學系</p>
+                            </div>
+                        </div>
+
+                        <!-- 時間軸項目 5：中大壢中 -->
+                        <div class="relative group">
+                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-gray-400 border-2 border-black shadow-[0_0_8px_rgba(156,163,175,0.6)] group-hover:scale-125 transition-transform"></div>
+                            
+                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-white/30 transition-all duration-300">
+                                <div class="flex items-center justify-between gap-2 mb-1.5">
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-gray-300 bg-white/5 border border-white/20">
+                                        學歷背景
+                                    </span>
+                                    <span class="text-xs text-gray-400 font-en">高中部</span>
+                                </div>
+                                <h4 class="text-base font-bold text-white group-hover:text-gray-200 transition-colors">中大壢中</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">中壢高中</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 右欄：專業培訓與認證合格 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 mb-6 px-1">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white tracking-wide">專業培訓與認證合格</h3>
+                    </div>
+
+                    <!-- Vibe Coding 結訓 -->
+                    <div class="glass-panel p-5 rounded-2xl relative group border-white/5 hover:border-emerald-500/40 transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-base font-bold text-white">Vibe Coding AI 協作應用系統設計</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">龍華科技大學</p>
+                            </div>
+                            <span class="inline-flex items-center self-start sm:self-center px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                                <i class="fa-solid fa-check mr-1.5 text-[10px]"></i>結訓
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Python 程式設計與 AI 數據分析實戰工作坊 -->
+                    <div class="glass-panel p-5 rounded-2xl relative group border-white/5 hover:border-emerald-500/40 transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-base font-bold text-white">Python程式設計與AI數據分析實戰工作坊</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">中原大學</p>
+                            </div>
+                            <span class="inline-flex items-center self-start sm:self-center px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                                <i class="fa-solid fa-check mr-1.5 text-[10px]"></i>結訓
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- 資策會人工智慧工程素養認證 -->
+                    <div class="glass-panel p-5 rounded-2xl relative group border-white/5 hover:border-emerald-500/40 transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-base font-bold text-white">資策會 人工智慧工程素養認證</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">財團法人資訊工業策進會</p>
+                            </div>
+                            <span class="inline-flex items-center self-start sm:self-center px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                                <i class="fa-solid fa-circle-check mr-1.5 text-[10px]"></i>認證合格
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Nvidia 深度學習基礎原理與實踐認證 -->
+                    <div class="glass-panel p-5 rounded-2xl relative group border-white/5 hover:border-emerald-500/40 transition-all duration-300">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                                <h4 class="text-base font-bold text-white">Nvidia 深度學習基礎原理與實踐認證</h4>
+                                <p class="text-xs text-gray-400 mt-0.5">NVIDIA Deep Learning Institute</p>
+                            </div>
+                            <span class="inline-flex items-center self-start sm:self-center px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                                <i class="fa-solid fa-circle-check mr-1.5 text-[10px]"></i>認證合格
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="relative z-10 py-24 px-4 border-t border-white/5 bg-black/30">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-16 md:mb-20 text-center">
+                <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Featured <span class="gradient-text">Works</span></h2>
+                <p class="text-gray-400">最新專案與網頁作品</p>
+            </div>
+
+            <!-- 作品卡片網格 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- 作品 1：三國赤壁連環火 -->
+                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col">
+                    <a href="https://csjhan-design.github.io/StoreMemoryMap/" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden aspect-[4/3] flex items-center justify-center z-10 bg-[#050505]">
+                        <div class="absolute inset-0 bg-cyber-blue/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
+                        <img src="https://image.thum.io/get/width/1024/https://csjhan-design.github.io/StoreMemoryMap/" 
+                             alt="三國赤壁連環火 縮圖" 
+                             class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                             onerror="this.src='https://placehold.co/800x600/1e293b/94a3b8?text=三國赤壁連環火';">
+                    </a>
+                    <div class="p-6 relative z-20 flex-1 flex flex-col justify-between">
+                        <div>
+                            <a href="https://csjhan-design.github.io/StoreMemoryMap/" target="_blank" rel="noopener noreferrer" class="absolute -top-5 right-6 w-10 h-10 bg-black rounded-full flex items-center justify-center border border-white/10 shadow-lg group-hover:border-cyber-cyan group-hover:shadow-[0_0_15px_rgba(0,242,254,0.5)] transition-all z-30">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-white group-hover:text-cyber-cyan"></i>
+                            </a>
+                            <div class="text-[10px] font-bold text-cyber-cyan uppercase tracking-widest mb-2">Game Dev / Action</div>
+                            <h3 class="text-xl font-bold text-white mb-2">三國赤壁連環火</h3>
+                            <p class="text-gray-400 text-sm mb-6 line-clamp-2">以三國歷史「赤壁之戰」為背景的網頁射擊遊戲。玩家將駕馭戰船突破連環火網，享受充滿視覺張力與刺激感的彈幕射擊與過關斬將體驗！</p>
+                        </div>
+                        
+                        <a href="https://csjhan-design.github.io/StoreMemoryMap/" target="_blank" rel="noopener noreferrer" class="block w-full py-3 text-center text-sm font-bold tracking-widest text-white border border-white/10 rounded-xl hover:bg-white/5 hover:border-cyber-cyan transition-all z-30 relative">
+                            VIEW LIVE SITE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 作品 2：好康優惠購物網 -->
+                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col">
+                    <a href="https://csjhan-design.github.io/dealsiteforfree/" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden aspect-[4/3] flex items-center justify-center z-10 bg-[#050505]">
+                        <div class="absolute inset-0 bg-cyber-purple/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
+                        <img src="https://image.thum.io/get/width/1024/https://csjhan-design.github.io/dealsiteforfree/" 
+                             alt="好康優惠購物網 縮圖" 
+                             class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                             onerror="this.src='https://placehold.co/800x600/1e293b/94a3b8?text=E-commerce';">
+                    </a>
+                    <div class="p-6 relative z-20 flex-1 flex flex-col justify-between">
+                        <div>
+                            <a href="https://csjhan-design.github.io/dealsiteforfree/" target="_blank" rel="noopener noreferrer" class="absolute -top-5 right-6 w-10 h-10 bg-black rounded-full flex items-center justify-center border border-white/10 shadow-lg group-hover:border-cyber-purple group-hover:shadow-[0_0_15px_rgba(192,38,211,0.5)] transition-all z-30">
+                                <i class="fa-solid fa-arrow-right -rotate-45 text-white group-hover:text-cyber-purple"></i>
+                            </a>
+                            <div class="text-[10px] font-bold text-cyber-purple uppercase tracking-widest mb-2">Web Dev / E-commerce</div>
+                            <h3 class="text-xl font-bold text-white mb-2">好康優惠購物網</h3>
+                            <p class="text-gray-400 text-sm mb-6 line-clamp-2">具備響應式設計的現代化電子商務平台，提供流暢的使用者購物與優惠探索體驗。</p>
+                        </div>
+                        
+                        <a href="https://csjhan-design.github.io/dealsiteforfree/" target="_blank" rel="noopener noreferrer" class="block w-full py-3 text-center text-sm font-bold tracking-widest text-white border border-white/10 rounded-xl hover:bg-white/5 hover:border-cyber-purple transition-all z-30 relative">
+                            VIEW LIVE SITE
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 作品 3：保留為未來擴充用 -->
+                <div class="glass-panel rounded-3xl overflow-hidden group">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <div class="absolute inset-0 bg-cyber-pink/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                        <img src="https://placehold.co/800x600/1e293b/94a3b8?text=Coming+Soon" alt="作品3縮圖" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    </div>
+                    <div class="p-6 relative">
+                        <div class="absolute -top-5 right-6 w-10 h-10 bg-black rounded-full flex items-center justify-center border border-white/10 shadow-lg group-hover:border-cyber-pink group-hover:shadow-[0_0_15px_rgba(255,8,68,0.5)] transition-all">
+                            <i class="fa-solid fa-arrow-right -rotate-45 text-white group-hover:text-cyber-pink"></i>
+                        </div>
+                        <div class="text-[10px] font-bold text-cyber-pink uppercase tracking-widest mb-2">System Design</div>
+                        <h3 class="text-xl font-bold text-white mb-2">AI 協作應用系統</h3>
+                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">於 Vibe Coding 結訓期間開發的系統，展示人機協同工作的高效模式。</p>
+                        
+                        <a href="#" target="_blank" class="block w-full py-3 text-center text-sm font-bold tracking-widest text-white border border-white/10 rounded-xl hover:bg-white/5 hover:border-cyber-pink transition-all">
+                            VIEW LIVE SITE
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative z-10 border-t border-white/10 bg-black py-12 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl font-black text-white mb-8 tracking-wider">
+                <span class="gradient-text">智慧桃園桃園智慧</span> 詹老師
+            </h2>
+            
+            <div class="flex flex-row justify-center items-center gap-6 mb-10">
+                <a href="https://www.facebook.com/share/1FUjxsm4e3/" target="_blank" rel="noopener noreferrer" 
+                   class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#1877F2] hover:bg-[#1877F2]/20 hover:shadow-[0_0_15px_rgba(24,119,242,0.5)] transition-all duration-300" title="Facebook">
+                    <i class="fa-brands fa-facebook-f text-lg"></i>
+                </a>
+                <a href="https://line.me/ti/p/~csjhan" target="_blank" rel="noopener noreferrer" 
+                   class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#06C755] hover:bg-[#06C755]/20 hover:shadow-[0_0_15px_rgba(6,199,85,0.5)] transition-all duration-300" title="LINE">
+                    <i class="fa-brands fa-line text-xl"></i>
+                </a>
+                <a href="mailto:c.s.jhan@gmail.com" 
+                   class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-red-500 hover:bg-red-500/20 hover:shadow-[0_0_15px_rgba(239,68,68,0.5)] transition-all duration-300" title="Email">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                </a>
+            </div>
+            
+            <p class="text-xs font-en tracking-widest text-gray-600 uppercase">
+                &copy; <span id="year"></span> AI World by Jhan. All rights reserved. 
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 設定版權年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 導覽列滾動與玻璃特效調整
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar').firstElementChild;
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/60', 'border-white/20');
+                navbar.classList.remove('bg-transparent', 'border-white/5');
+            } else {
+                navbar.classList.remove('bg-black/60', 'border-white/20');
+                navbar.classList.add('bg-transparent', 'border-white/5');
+            }
+        });
+    </script>
+</body>
+</html>
