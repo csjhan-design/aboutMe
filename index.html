@@ -1,38 +1,29 @@
 <!DOCTYPE html>
-<html lang="zh-TW" class="scroll-smooth">
+<html lang="zh-TW" class="scroll-smooth" style="font-size: 18px;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>詹老師 - 智慧桃園個人網站</title>
+    <title>智慧桃園 桃園智慧 詹老師 | 最親切的社區 AI 生活好幫手</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['"Noto Sans TC"', 'sans-serif'],
-                        en: ['"Outfit"', 'sans-serif'],
                     },
                     colors: {
-                        cyber: {
-                            cyan: '#00f2fe',
-                            blue: '#4facfe',
-                            purple: '#c026d3',
-                            pink: '#ff0844'
-                        }
-                    },
-                    animation: {
-                        blob: "blob 7s infinite",
-                    },
-                    keyframes: {
-                        blob: {
-                            "0%": { transform: "translate(0px, 0px) scale(1)" },
-                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
-                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
-                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        warm: {
+                            cream: '#FFFBF5',
+                            sand: '#FEF3C7',
+                            orange: '#EA580C',
+                            amber: '#D97706',
+                            green: '#059669',
+                            line: '#06C755',
+                            ink: '#1E293B',
+                            body: '#334155'
                         }
                     }
                 }
@@ -41,436 +32,693 @@
     </script>
     <style>
         body {
+            background-color: #FFFBF5;
+            color: #1E293B;
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #050505; /* 極致黑底色 */
-            color: #f8fafc;
             overflow-x: hidden;
         }
-        /* 玻璃面板風格 */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+        /* 柔和暖陽點點底紋，護眼不刺眼 */
+        .warm-pattern {
+            background-image: radial-gradient(#FDE68A 1.5px, transparent 1.5px);
+            background-size: 28px 28px;
         }
-        .glass-panel:hover {
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.05);
+
+        /* 親切大卡片立體感 */
+        .friendly-card {
+            background-color: #FFFFFF;
+            border: 2px solid #FDE68A;
+            box-shadow: 0 12px 30px -8px rgba(180, 83, 9, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        /* 賽博龐克漸層字體 */
-        .gradient-text {
-            background: linear-gradient(135deg, #00f2fe, #4facfe, #c026d3);
+
+        .friendly-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 36px -8px rgba(180, 83, 9, 0.14);
+        }
+
+        /* 漸層暖陽標題強調 */
+        .warm-highlight {
+            background: linear-gradient(120deg, #EA580C 0%, #D97706 50%, #059669 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: gradient-shift 3s ease infinite;
         }
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        /* 動態背景延遲 */
-        .animation-delay-2000 { animation-delay: 2s; }
-        .animation-delay-4000 { animation-delay: 4s; }
     </style>
 </head>
-<body class="antialiased selection:bg-cyber-cyan selection:text-black">
+<body class="warm-pattern antialiased selection:bg-amber-200 selection:text-slate-900">
 
-    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-0 -left-4 w-72 h-72 bg-cyber-purple rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob"></div>
-        <div class="absolute top-0 -right-4 w-72 h-72 bg-cyber-cyan rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-cyber-blue rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob animation-delay-4000"></div>
-    </div>
-
-    <nav class="fixed w-full z-50 transition-all duration-300 pt-4 px-4 flex justify-center" id="navbar">
-        <div class="glass-panel rounded-full px-6 py-3 flex justify-between items-center w-full max-w-4xl mx-auto transition-all duration-300">
-            <div class="flex-shrink-0 flex items-center cursor-pointer group" onclick="window.scrollTo(0,0)">
-                <div class="flex items-center gap-3">
-                    <span class="w-2.5 h-2.5 rounded-full bg-cyber-cyan animate-ping"></span>
-                    <span class="font-bold text-base md:text-lg tracking-wider text-white group-hover:text-cyber-cyan transition-colors">智慧桃園 桃園智慧 詹老師</span>
-                </div>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="text-sm font-en tracking-widest text-gray-400 hover:text-cyber-cyan transition-colors">ABOUT</a>
-                <a href="#experience" class="text-sm font-en tracking-widest text-gray-400 hover:text-cyber-cyan transition-colors">EXPERIENCE</a>
-                <a href="#portfolio" class="text-sm font-en tracking-widest text-gray-400 hover:text-cyber-cyan transition-colors">PORTFOLIO</a>
-            </div>
-        </div>
-    </nav>
-
-    <section id="about" class="relative z-10 pt-24 md:pt-28 pb-16 md:pb-24 px-4">
-        <div class="max-w-5xl mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
-            <!-- 文字簡介 -->
-            <div class="flex-1 text-center md:text-left space-y-8">
-                <div class="inline-block glass-panel px-4 py-1.5 rounded-full mb-2">
-                    <span class="text-xs font-en tracking-widest text-cyber-cyan uppercase"><i class="fa-solid fa-sparkles mr-2"></i>AI Educator & Developer</span>
-                </div>
-                <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight">
-                    <span class="text-white">智慧桃園</span><br>
-                    <span class="gradient-text">桃園智慧 詹老師</span>
-                </h1>
-                <p class="text-lg text-gray-400 max-w-xl mx-auto md:mx-0 font-light leading-relaxed">
-                    致力於人工智慧、程式設計與網頁開發。透過科技與教育的結合，為桃園帶來智慧的火花，並不斷探索 AI 的無限可能。
-                </p>
-                
-                <!-- 聯絡按鈕群 (潮酷風格) -->
-                <div class="flex flex-row gap-4 justify-center md:justify-start items-center pt-4">
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/share/1FUjxsm4e3/" target="_blank" rel="noopener noreferrer" 
-                       class="group relative w-12 h-12 flex items-center justify-center rounded-full glass-panel hover:bg-[#1877F2]/20 hover:border-[#1877F2]/50 transition-all duration-300" title="Facebook 粉絲專頁">
-                        <i class="fa-brands fa-facebook-f text-xl text-gray-300 group-hover:text-[#1877F2] transition-colors"></i>
-                    </a>
-                    <!-- LINE -->
-                    <a href="https://line.me/ti/p/~csjhan" target="_blank" rel="noopener noreferrer"
-                       class="group relative w-12 h-12 flex items-center justify-center rounded-full glass-panel hover:bg-[#06C755]/20 hover:border-[#06C755]/50 transition-all duration-300" title="加 LINE 好友 (ID: csjhan)">
-                        <i class="fa-brands fa-line text-2xl text-gray-300 group-hover:text-[#06C755] transition-colors"></i>
-                    </a>
-                    <!-- Gmail -->
-                    <a href="mailto:c.s.jhan@gmail.com" 
-                       class="group relative w-12 h-12 flex items-center justify-center rounded-full glass-panel hover:bg-red-500/20 hover:border-red-500/50 transition-all duration-300" title="發送 Email">
-                        <i class="fa-solid fa-envelope text-xl text-gray-300 group-hover:text-red-400 transition-colors"></i>
-                    </a>
-                </div>
-
-                <div class="pt-4 flex justify-center md:justify-start">
-                    <a href="#portfolio" 
-                       class="relative inline-flex items-center justify-center px-8 py-3 text-sm font-bold tracking-widest uppercase text-white bg-white/10 rounded-full overflow-hidden group hover:bg-white/20 transition-all border border-white/10 hover:border-cyber-cyan/50">
-                        <span class="relative z-10 flex items-center gap-2">
-                            Explore Works <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform duration-300"></i>
-                        </span>
-                    </a>
-                </div>
-            </div>
+    <!-- 頂部貼心導覽列（含一鍵調整字體大小功能） -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b-2 border-amber-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
             
-            <!-- 個人照片 -->
-            <div class="flex-1 relative flex justify-center w-full max-w-sm md:max-w-md -mt-6 md:-mt-12">
-                <div class="relative group w-full flex flex-col items-center">
-                    
-                    <!-- 背後的動態光暈 (呼吸燈效果) -->
-                    <div class="absolute inset-0 bg-gradient-to-r from-cyber-cyan to-cyber-purple rounded-full blur-[70px] opacity-35 group-hover:opacity-65 transition duration-1000 group-hover:duration-300 animate-pulse"></div>
-                    
-                    <!-- 圖片容器 (帶有底部漸層淡出效果) -->
-                    <div class="relative z-10 w-full flex justify-end pr-2 md:pr-4" style="-webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%); mask-image: linear-gradient(to bottom, black 75%, transparent 100%);">
-                        <!-- 去背透明 PNG 圖片 -->
-                        <img src="https://files.catbox.moe/clhtb0.png" 
-                             alt="詹老師的照片" 
-                             class="relative z-10 w-64 h-auto md:w-80 object-contain drop-shadow-[0_0_20px_rgba(0,242,254,0.45)] group-hover:drop-shadow-[0_0_40px_rgba(192,38,211,0.7)] transition-all duration-700 group-hover:scale-[1.03]"
-                             onerror="this.src='https://placehold.co/400x600/0f172a/ffffff?text=Photo';">
+            <!-- 品牌標題：智慧桃園 桃園智慧 詹老師 -->
+            <a href="#top" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-md group-hover:scale-105 transition-transform" title="桃園市全區地圖（特別突顯：平鎮區）">
+                    <!-- 依據真實 GIS 經緯度投影繪製之桃園市全境輪廓 + 平鎮區真實輪廓 SVG -->
+                    <svg class="w-10 h-10 drop-shadow-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="真實桃園市與平鎮區剪影">
+                        <!-- 桃園市真實全境輪廓（新屋觀音大園蘆竹海岸線 -> 龜山迴龍 -> 八德大溪 -> 復興區拉拉山/巴陵 -> 龍潭楊梅） -->
+                        <path d="M5.5 34.5 L8.2 29.8 L12.7 22.4 L16.8 18.2 L20.0 15.5 L27.5 11.8 L36.4 8.6 L45.2 5.8 L54.5 3.4 L59.8 6.5 L65.5 8.6 L69.2 13.5 L74.6 16.2 L80.0 20.7 L75.2 24.8 L68.4 26.5 L65.5 31.0 L69.1 35.8 L69.1 39.7 L74.5 44.2 L80.0 50.0 L85.4 52.8 L89.1 56.9 L88.2 63.5 L92.7 72.4 L91.5 79.5 L94.5 86.2 L88.4 91.0 L81.8 94.8 L75.2 91.5 L67.3 87.9 L65.8 81.2 L63.6 74.1 L60.2 68.5 L56.4 63.8 L50.5 60.2 L43.6 56.9 L38.2 51.7 L33.5 49.2 L29.1 46.6 L22.5 44.5 L16.4 41.4 L12.2 39.8 L9.1 37.9 Z" 
+                              fill="rgba(255, 255, 255, 0.28)" 
+                              stroke="#FFFFFF" 
+                              stroke-width="2.8" 
+                              stroke-linejoin="round" />
+                        <!-- 平鎮區真實輪廓（雙連坡 -> 環北 -> 龍岡 -> 山仔頂 -> 宋屋，以亮黃色特別突顯） -->
+                        <path d="M40.0 31.0 L45.5 31.0 L49.2 33.8 L54.5 36.2 L52.8 39.2 L50.9 41.4 L49.5 44.2 L47.3 46.6 L43.2 46.2 L40.0 44.8 L41.2 40.5 L36.4 36.2 L38.2 33.5 Z" 
+                              fill="#FDE047" 
+                              stroke="#FFFFFF" 
+                              stroke-width="1.8" 
+                              stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div>
+                    <div class="text-base sm:text-lg font-black text-slate-900 leading-tight">
+                        智慧桃園 桃園智慧 <span class="text-orange-600">詹老師</span>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-700">
+                        <i class="fa-solid fa-heart text-rose-500 mr-1"></i>最親切的社區 AI 生活講師
                     </div>
                 </div>
+            </a>
+
+            <!-- 右側：貼心字體大小切換器 + 快速加 LINE -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- 字體大小切換按鈕組 -->
+                <div class="flex items-center bg-amber-50 border-2 border-amber-200 rounded-xl p-1" role="group" aria-label="調整文字大小">
+                    <span class="hidden md:inline text-xs font-bold text-amber-800 px-2">字體：</span>
+                    <button onclick="setFontSize('16px', this)" class="font-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:bg-white transition-all">
+                        標準
+                    </button>
+                    <button onclick="setFontSize('18px', this)" class="font-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-orange-600 text-white shadow-sm transition-all">
+                        大字
+                    </button>
+                    <button onclick="setFontSize('21px', this)" class="font-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:bg-white transition-all">
+                        超大
+                    </button>
+                </div>
+
+                <!-- 快速加 LINE 按鈕 -->
+                <a href="https://line.me/ti/p/~csjhan" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#06C755] hover:bg-emerald-600 text-white text-sm font-black shadow-md transition-all">
+                    <i class="fa-brands fa-line text-lg"></i>
+                    <span>加 LINE 找老師</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 第二排：簡單明瞭的快速跳轉分頁列 -->
+        <nav class="bg-amber-50/90 border-t border-amber-100">
+            <div class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-start sm:justify-center gap-2 sm:gap-6 overflow-x-auto whitespace-nowrap text-sm font-bold text-slate-700">
+                <a href="#top" class="px-3 py-1.5 rounded-xl hover:bg-amber-200/70 hover:text-orange-700 transition-colors">🏠 認識詹老師</a>
+                <a href="#life-ai" class="px-3 py-1.5 rounded-xl hover:bg-amber-200/70 hover:text-orange-700 transition-colors">✨ AI 生活妙招</a>
+                <a href="#works" class="px-3 py-1.5 rounded-xl hover:bg-amber-200/70 hover:text-orange-700 transition-colors">🎮 遊戲與好康網</a>
+                <a href="#history" class="px-3 py-1.5 rounded-xl hover:bg-amber-200/70 hover:text-orange-700 transition-colors">🏅 經歷與專業認證</a>
+                <a href="#contact" class="px-3 py-1.5 rounded-xl hover:bg-amber-200/70 hover:text-orange-700 transition-colors">📞 聯繫邀約</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 01. 主視覺區：親切鄰家老師登場 -->
+    <section id="top" class="pt-8 sm:pt-12 pb-16 px-4 max-w-6xl mx-auto">
+        <div class="friendly-card rounded-[2rem] p-6 sm:p-10 lg:p-12 bg-gradient-to-br from-white via-amber-50/50 to-orange-50/60">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                
+                <!-- 左側：溫暖親切的問候與自我介紹 (7欄) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 border-2 border-emerald-400 text-emerald-900 text-sm font-black">
+                        <i class="fa-solid fa-seedling text-emerald-600"></i>
+                        <span>桃園在地長大・最有耐心的數位好鄰居</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-snug">
+                        各位社區的<span class="text-orange-600">大哥大姐、<br class="hidden sm:inline">婆婆媽媽</span>大家好！<br>
+                        我是<span class="warm-highlight">詹老師</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
+                        很多大哥大姐常笑著跟我說：「老師啊，現在電視天天都在講 AI，我看不懂英文、打字又慢，年紀大了還學得會嗎？」<br><br>
+                        <strong class="text-slate-900 bg-amber-200/80 px-1.5 py-0.5 rounded">請大家放一百個心！</strong> 在我的課堂上，<strong class="text-orange-700">不用背英文、也不用記複雜的步驟</strong>，忘記了問我十次我也一樣笑咪咪慢慢教！我最喜歡陪著大家像鄰居喝茶聊天一樣，把您的手機變成<strong class="text-emerald-700">「用講話就能通、一學就會」</strong>的貼心生活小幫手！
+                    </p>
+
+                    <!-- 三大安心保證小卡 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                        <div class="p-4 rounded-2xl bg-white border-2 border-amber-200 text-center">
+                            <div class="text-2xl mb-1">🗣️</div>
+                            <div class="font-black text-slate-900 text-base">講人話不講術語</div>
+                            <div class="text-xs text-slate-600 mt-0.5">一步一步慢慢教</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white border-2 border-emerald-300 text-center">
+                            <div class="text-2xl mb-1">🏆</div>
+                            <div class="font-black text-slate-900 text-base">國際 AI 認證講師</div>
+                            <div class="text-xs text-emerald-700 font-bold mt-0.5">NVIDIA 認證合格</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white border-2 border-orange-200 text-center">
+                            <div class="text-2xl mb-1">📱</div>
+                            <div class="font-black text-slate-900 text-base">手機就能輕鬆玩</div>
+                            <div class="text-xs text-slate-600 mt-0.5">免買貴森森新電腦</div>
+                        </div>
+                    </div>
+
+                    <!-- 大顆行動按鈕 -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#works" class="px-7 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-base sm:text-lg text-center shadow-lg shadow-orange-500/25 transition-all flex items-center justify-center gap-2">
+                            <span>👉 點我看老師做的遊戲與好康網</span>
+                        </a>
+                        <a href="https://line.me/ti/p/~csjhan" target="_blank" rel="noopener noreferrer" class="px-7 py-4 rounded-2xl bg-[#06C755] hover:bg-emerald-600 text-white font-black text-base sm:text-lg text-center shadow-lg shadow-emerald-500/25 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-line text-2xl"></i>
+                            <span>加老師 LINE 聊天</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 右側：詹老師親切清晰肖像卡 (5欄，人物向上微調、乾淨無遮擋) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-sm rounded-[2rem] bg-gradient-to-b from-amber-100 via-orange-50 to-white border-4 border-amber-300 shadow-xl overflow-hidden">
+                        <!-- 頂部溫暖歡迎條 -->
+                        <div class="bg-amber-400/90 text-slate-950 text-center py-2.5 px-4 font-black text-sm tracking-wide">
+                            ⭐ 智慧桃園 桃園智慧 領航講師 ⭐
+                        </div>
+                        
+                        <!-- 詹老師照片（往上對齊、無對話框遮擋） -->
+                        <div class="px-6 pt-3 pb-0 flex justify-center items-end bg-gradient-to-b from-amber-50 to-white">
+                            <img src="https://files.catbox.moe/clhtb0.png" 
+                                 alt="智慧桃園 桃園智慧 詹老師" 
+                                 class="w-64 sm:w-72 h-auto object-contain drop-shadow-lg"
+                                 onerror="this.src='https://placehold.co/400x480/FEF3C7/EA580C?text=智慧桃園+詹老師';">
+                        </div>
+
+                        <!-- 底部名牌 -->
+                        <div class="bg-white border-t-2 border-amber-200 p-5 text-center">
+                            <div class="text-xl font-black text-slate-900">詹老師</div>
+                            <div class="text-sm font-bold text-orange-600 mt-0.5">淡江電機系 &bull; AI 實戰應用講師</div>
+                            <div class="mt-3 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 border-2 border-emerald-500 text-emerald-800 text-xs font-black">
+                                <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                                <span>NVIDIA 深度學習認證合格</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- 學經歷與專業認證專區 -->
-    <section id="experience" class="relative z-10 py-20 px-4 border-t border-white/5 bg-black/40">
-        <div class="max-w-5xl mx-auto">
-            <div class="mb-14 text-center">
-                <div class="inline-block glass-panel px-4 py-1 rounded-full mb-3">
-                    <span class="text-xs font-en tracking-widest text-emerald-400 uppercase">
-                        <i class="fa-solid fa-certificate mr-1.5"></i>Career & Credentials
+    <!-- 02. 互動區：社區生活 AI 妙招點一點 -->
+    <section id="life-ai" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-orange-800 font-black text-sm mb-3">
+                💡 原來 AI 這麼好用！
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-3">
+                詹老師教大家：<span class="text-orange-600">AI 怎麼幫生活大忙？</span>
+            </h2>
+            <p class="text-base sm:text-lg text-slate-600 font-medium">
+                請點選下面四個按鈕，看看我們平時上課都在學哪些有趣又實用的絕活！
+            </p>
+        </div>
+
+        <div class="friendly-card rounded-[2rem] p-6 sm:p-10">
+            <!-- 四大生活主題大按鈕 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <button onclick="selectLifeTip('morning', this)" class="life-btn p-5 rounded-2xl text-left border-4 border-orange-500 bg-orange-50 shadow-md transition-all">
+                    <div class="text-3xl mb-2">🌸</div>
+                    <div class="text-lg font-black text-slate-900">做專屬早安圖</div>
+                    <div class="text-sm text-slate-600 mt-1">出遊拍照自動寫祝福語</div>
+                </button>
+
+                <button onclick="selectLifeTip('cooking', this)" class="life-btn p-5 rounded-2xl text-left border-2 border-slate-200 bg-white hover:border-amber-400 transition-all">
+                    <div class="text-3xl mb-2">🍲</div>
+                    <div class="text-lg font-black text-slate-900">冰箱剩菜變大餐</div>
+                    <div class="text-sm text-slate-600 mt-1">拍照問 AI 今晚煮什麼</div>
+                </button>
+
+                <button onclick="selectLifeTip('safety', this)" class="life-btn p-5 rounded-2xl text-left border-2 border-slate-200 bg-white hover:border-amber-400 transition-all">
+                    <div class="text-3xl mb-2">🛡️</div>
+                    <div class="text-lg font-black text-slate-900">防詐騙與看藥袋</div>
+                    <div class="text-sm text-slate-600 mt-1">奇怪簡訊先問 AI 把關</div>
+                </button>
+
+                <button onclick="selectLifeTip('grandkids', this)" class="life-btn p-5 rounded-2xl text-left border-2 border-slate-200 bg-white hover:border-amber-400 transition-all">
+                    <div class="text-3xl mb-2">👨‍👩‍👧‍👦</div>
+                    <div class="text-lg font-black text-slate-900">做小遊戲陪金孫</div>
+                    <div class="text-sm text-slate-600 mt-1">用講話就能做出好玩網頁</div>
+                </button>
+            </div>
+
+            <!-- 互動內容展示框 -->
+            <div class="rounded-3xl bg-amber-50/80 border-2 border-amber-300 p-6 sm:p-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 mb-5 border-b-2 border-amber-200">
+                    <h3 id="tip-title" class="text-2xl sm:text-3xl font-black text-orange-700">
+                        🌸 自己做「專屬早安圖」與旅遊回憶錄！
+                    </h3>
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white border border-amber-300 text-sm font-black text-amber-800 shrink-0">
+                        <i class="fa-solid fa-star text-amber-500"></i> 社區課最受歡迎第一名
                     </span>
                 </div>
-                <h2 class="text-3xl md:text-5xl font-black text-white mb-3">實務淬鍊與<span class="gradient-text">養成</span></h2>
-                <p class="text-gray-400 text-sm md:text-base">從扎實工科背景、跨領域實務歷練，到前沿 AI 專業合格</p>
-            </div>
 
-            <!-- 兩欄式排版：左欄為直式時間軸（工作與學歷），右欄為專業培訓與認證 -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-                
-                <!-- 左欄：工作與學歷歷程（直式時間軸） -->
-                <div>
-                    <div class="flex items-center gap-3 mb-6 px-1">
-                        <div class="w-8 h-8 rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/30 flex items-center justify-center text-cyber-cyan">
-                            <i class="fa-solid fa-timeline"></i>
+                <p id="tip-desc" class="text-base sm:text-lg text-slate-800 leading-relaxed mb-6 font-medium">
+                    不用再轉傳網路上重複的長輩圖啦！詹老師教大家用手機拍下自己種的花、或是去石門水庫出遊的照片，只要跟 AI 說一句話，一秒幫你配上溫暖詩句與漂亮字體，傳到 LINE 群組裡大家都稱讚你有才華！
+                </p>
+
+                <!-- 示範「只要跟 AI 這樣說」小抄框 -->
+                <div class="bg-white rounded-2xl p-5 border-2 border-emerald-400 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                        <div class="text-xs font-black text-emerald-700 uppercase mb-1">
+                            💬 上課現學現用・只要對手機這樣說：
                         </div>
-                        <h3 class="text-xl font-bold text-white tracking-wide">學經歷</h3>
+                        <div id="tip-prompt" class="text-base font-bold text-slate-900">
+                            「請幫我寫一段親切溫暖的早安祝福語，適合傳給社區好朋友，祝大家身體健康、心情愉快！」
+                        </div>
                     </div>
-
-                    <!-- 直式時間軸容器 -->
-                    <div class="relative border-l-2 border-white/10 ml-4 md:ml-5 space-y-7 pl-6 md:pl-7">
-
-                        <!-- 時間軸項目 1：電商物流 -->
-                        <div class="relative group">
-                            <!-- 時間軸亮點節點 -->
-                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyber-purple border-2 border-black shadow-[0_0_12px_rgba(192,38,211,0.8)] group-hover:scale-125 transition-transform"></div>
-                            
-                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-cyber-purple/40 transition-all duration-300">
-                                <div class="flex items-center justify-between gap-2 mb-1.5">
-                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-cyber-purple bg-cyber-purple/10 border border-cyber-purple/30">
-                                        工作經歷
-                                    </span>
-                                    <span class="text-xs text-gray-400 font-en">供應鏈與運營</span>
-                                </div>
-                                <h4 class="text-base font-bold text-white group-hover:text-cyber-purple transition-colors">知名中小型電商</h4>
-                                <p class="text-sm text-gray-300 font-medium mt-0.5">倉儲物流部門</p>
-                                <p class="text-xs text-gray-400 mt-2 leading-relaxed">掌握庫存調配、物流動線與高效率出貨管理。</p>
-                            </div>
-                        </div>
-
-                        <!-- 時間軸項目 2：ITO 製造廠 -->
-                        <div class="relative group">
-                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyber-blue border-2 border-black shadow-[0_0_12px_rgba(79,172,254,0.8)] group-hover:scale-125 transition-transform"></div>
-                            
-                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-cyber-blue/40 transition-all duration-300">
-                                <div class="flex items-center justify-between gap-2 mb-1.5">
-                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-cyber-blue bg-cyber-blue/10 border border-cyber-blue/30">
-                                        工作經歷
-                                    </span>
-                                    <span class="text-xs text-gray-400 font-en">光電材料與品管</span>
-                                </div>
-                                <h4 class="text-base font-bold text-white group-hover:text-cyber-blue transition-colors">手機螢幕 ITO 製造廠</h4>
-                                <p class="text-sm text-gray-300 font-medium mt-0.5">品保部門 (QA/QC)</p>
-                                <p class="text-xs text-gray-400 mt-2 leading-relaxed">執行精密檢驗、良率把關與異常分析管控流程。</p>
-                            </div>
-                        </div>
-
-                        <!-- 時間軸項目 3：印刷電路板廠 -->
-                        <div class="relative group">
-                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyber-cyan border-2 border-black shadow-[0_0_12px_rgba(0,242,254,0.8)] group-hover:scale-125 transition-transform"></div>
-                            
-                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-cyber-cyan/40 transition-all duration-300">
-                                <div class="flex items-center justify-between gap-2 mb-1.5">
-                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-cyber-cyan bg-cyber-cyan/10 border border-cyber-cyan/30">
-                                        工作經歷
-                                    </span>
-                                    <span class="text-xs text-gray-400 font-en">硬體製造製程</span>
-                                </div>
-                                <h4 class="text-base font-bold text-white group-hover:text-cyber-cyan transition-colors">印刷電路板廠 (PCB)</h4>
-                                <p class="text-sm text-gray-300 font-medium mt-0.5">設備工程師</p>
-                                <p class="text-xs text-gray-400 mt-2 leading-relaxed">負責機台設備運轉維護、製程調校與穩定度優化。</p>
-                            </div>
-                        </div>
-
-                        <!-- 時間軸項目 4：淡江大學 電機工程學系 -->
-                        <div class="relative group">
-                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-blue-400 border-2 border-black shadow-[0_0_12px_rgba(96,165,250,0.8)] group-hover:scale-125 transition-transform"></div>
-                            
-                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-blue-400/40 transition-all duration-300">
-                                <div class="flex items-center justify-between gap-2 mb-1.5">
-                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-blue-300 bg-blue-500/10 border border-blue-500/30">
-                                        學歷背景
-                                    </span>
-                                    <span class="text-xs text-gray-400 font-en">大學部</span>
-                                </div>
-                                <h4 class="text-base font-bold text-white group-hover:text-blue-300 transition-colors">淡江大學</h4>
-                                <p class="text-sm text-gray-300 mt-0.5 font-medium">電機工程學系</p>
-                            </div>
-                        </div>
-
-                        <!-- 時間軸項目 5：中大壢中 -->
-                        <div class="relative group">
-                            <div class="absolute -left-[31px] md:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-gray-400 border-2 border-black shadow-[0_0_8px_rgba(156,163,175,0.6)] group-hover:scale-125 transition-transform"></div>
-                            
-                            <div class="glass-panel p-5 rounded-2xl border-white/5 group-hover:border-white/30 transition-all duration-300">
-                                <div class="flex items-center justify-between gap-2 mb-1.5">
-                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold text-gray-300 bg-white/5 border border-white/20">
-                                        學歷背景
-                                    </span>
-                                    <span class="text-xs text-gray-400 font-en">高中部</span>
-                                </div>
-                                <h4 class="text-base font-bold text-white group-hover:text-gray-200 transition-colors">中大壢中</h4>
-                                <p class="text-xs text-gray-400 mt-0.5">中壢高中</p>
-                            </div>
-                        </div>
-
-                    </div>
+                    <button onclick="copySamplePrompt()" class="shrink-0 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>複製這句話試試看</span>
+                    </button>
                 </div>
-
-                <!-- 右欄：專業培訓與認證合格 -->
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3 mb-6 px-1">
-                        <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white tracking-wide">專業培訓與認證合格</h3>
-                    </div>
-
-                    <!-- Vibe Coding 結訓 -->
-                    <div class="glass-panel p-5 rounded-2xl relative group border-white/5 hover:border-emerald-500/40 transition-all duration-300">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <div>
-                                <h4 class="text-base font-bold text-white">Vibe Coding AI 協作應用系統設計</h4>
-                                <p class="text-xs text-gray-400 mt-0.5">龍華科技大學</p>
-                            </div>
-                            <span class="inline-flex items-center self-start sm:self-center px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
-                                <i class="fa-solid fa-check mr-1.5 text-[10px]"></i>結訓
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Python 程式設計與 AI 數據分析實戰工作坊 -->
-                    <div class="glass-panel p-5 rounded-2xl relative group border-white/5 hover:border-emerald-500/40 transition-all duration-300">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <div>
-                                <h4 class="text-base font-bold text-white">Python程式設計與AI數據分析實戰工作坊</h4>
-                                <p class="text-xs text-gray-400 mt-0.5">中原大學</p>
-                            </div>
-                            <span class="inline-flex items-center self-start sm:self-center px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
-                                <i class="fa-solid fa-check mr-1.5 text-[10px]"></i>結訓
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- 資策會人工智慧工程素養認證 -->
-                    <div class="glass-panel p-5 rounded-2xl relative group border-white/5 hover:border-emerald-500/40 transition-all duration-300">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <div>
-                                <h4 class="text-base font-bold text-white">資策會 人工智慧工程素養認證</h4>
-                                <p class="text-xs text-gray-400 mt-0.5">財團法人資訊工業策進會</p>
-                            </div>
-                            <span class="inline-flex items-center self-start sm:self-center px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
-                                <i class="fa-solid fa-circle-check mr-1.5 text-[10px]"></i>認證合格
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Nvidia 深度學習基礎原理與實踐認證 -->
-                    <div class="glass-panel p-5 rounded-2xl relative group border-white/5 hover:border-emerald-500/40 transition-all duration-300">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <div>
-                                <h4 class="text-base font-bold text-white">Nvidia 深度學習基礎原理與實踐認證</h4>
-                                <p class="text-xs text-gray-400 mt-0.5">NVIDIA Deep Learning Institute</p>
-                            </div>
-                            <span class="inline-flex items-center self-start sm:self-center px-3 py-1 rounded-full text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
-                                <i class="fa-solid fa-circle-check mr-1.5 text-[10px]"></i>認證合格
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="relative z-10 py-24 px-4 border-t border-white/5 bg-black/30">
-        <div class="max-w-5xl mx-auto">
-            <div class="mb-16 md:mb-20 text-center">
-                <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Featured <span class="gradient-text">Works</span></h2>
-                <p class="text-gray-400">最新專案與網頁作品</p>
-            </div>
-
-            <!-- 作品卡片網格 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- 作品 1：三國赤壁連環火 -->
-                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col">
-                    <a href="https://csjhan-design.github.io/StoreMemoryMap/" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden aspect-[4/3] flex items-center justify-center z-10 bg-[#050505]">
-                        <div class="absolute inset-0 bg-cyber-blue/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
-                        <img src="https://image.thum.io/get/width/1024/https://csjhan-design.github.io/StoreMemoryMap/" 
-                             alt="三國赤壁連環火 縮圖" 
-                             class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
-                             onerror="this.src='https://placehold.co/800x600/1e293b/94a3b8?text=三國赤壁連環火';">
-                    </a>
-                    <div class="p-6 relative z-20 flex-1 flex flex-col justify-between">
-                        <div>
-                            <a href="https://csjhan-design.github.io/StoreMemoryMap/" target="_blank" rel="noopener noreferrer" class="absolute -top-5 right-6 w-10 h-10 bg-black rounded-full flex items-center justify-center border border-white/10 shadow-lg group-hover:border-cyber-cyan group-hover:shadow-[0_0_15px_rgba(0,242,254,0.5)] transition-all z-30">
-                                <i class="fa-solid fa-arrow-right -rotate-45 text-white group-hover:text-cyber-cyan"></i>
-                            </a>
-                            <div class="text-[10px] font-bold text-cyber-cyan uppercase tracking-widest mb-2">Game Dev / Action</div>
-                            <h3 class="text-xl font-bold text-white mb-2">三國赤壁連環火</h3>
-                            <p class="text-gray-400 text-sm mb-6 line-clamp-2">以三國歷史「赤壁之戰」為背景的網頁射擊遊戲。玩家將駕馭戰船突破連環火網，享受充滿視覺張力與刺激感的彈幕射擊與過關斬將體驗！</p>
-                        </div>
-                        
-                        <a href="https://csjhan-design.github.io/StoreMemoryMap/" target="_blank" rel="noopener noreferrer" class="block w-full py-3 text-center text-sm font-bold tracking-widest text-white border border-white/10 rounded-xl hover:bg-white/5 hover:border-cyber-cyan transition-all z-30 relative">
-                            VIEW LIVE SITE
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 作品 2：好康優惠購物網 -->
-                <div class="glass-panel rounded-3xl overflow-hidden group flex flex-col">
-                    <a href="https://csjhan-design.github.io/dealsiteforfree/" target="_blank" rel="noopener noreferrer" class="relative overflow-hidden aspect-[4/3] flex items-center justify-center z-10 bg-[#050505]">
-                        <div class="absolute inset-0 bg-cyber-purple/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none"></div>
-                        <img src="https://image.thum.io/get/width/1024/https://csjhan-design.github.io/dealsiteforfree/" 
-                             alt="好康優惠購物網 縮圖" 
-                             class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
-                             onerror="this.src='https://placehold.co/800x600/1e293b/94a3b8?text=E-commerce';">
-                    </a>
-                    <div class="p-6 relative z-20 flex-1 flex flex-col justify-between">
-                        <div>
-                            <a href="https://csjhan-design.github.io/dealsiteforfree/" target="_blank" rel="noopener noreferrer" class="absolute -top-5 right-6 w-10 h-10 bg-black rounded-full flex items-center justify-center border border-white/10 shadow-lg group-hover:border-cyber-purple group-hover:shadow-[0_0_15px_rgba(192,38,211,0.5)] transition-all z-30">
-                                <i class="fa-solid fa-arrow-right -rotate-45 text-white group-hover:text-cyber-purple"></i>
-                            </a>
-                            <div class="text-[10px] font-bold text-cyber-purple uppercase tracking-widest mb-2">Web Dev / E-commerce</div>
-                            <h3 class="text-xl font-bold text-white mb-2">好康優惠購物網</h3>
-                            <p class="text-gray-400 text-sm mb-6 line-clamp-2">具備響應式設計的現代化電子商務平台，提供流暢的使用者購物與優惠探索體驗。</p>
-                        </div>
-                        
-                        <a href="https://csjhan-design.github.io/dealsiteforfree/" target="_blank" rel="noopener noreferrer" class="block w-full py-3 text-center text-sm font-bold tracking-widest text-white border border-white/10 rounded-xl hover:bg-white/5 hover:border-cyber-purple transition-all z-30 relative">
-                            VIEW LIVE SITE
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 作品 3：保留為未來擴充用 -->
-                <div class="glass-panel rounded-3xl overflow-hidden group">
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                        <div class="absolute inset-0 bg-cyber-pink/20 mix-blend-overlay z-10 group-hover:bg-transparent transition-colors duration-500"></div>
-                        <img src="https://placehold.co/800x600/1e293b/94a3b8?text=Coming+Soon" alt="作品3縮圖" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
-                    </div>
-                    <div class="p-6 relative">
-                        <div class="absolute -top-5 right-6 w-10 h-10 bg-black rounded-full flex items-center justify-center border border-white/10 shadow-lg group-hover:border-cyber-pink group-hover:shadow-[0_0_15px_rgba(255,8,68,0.5)] transition-all">
-                            <i class="fa-solid fa-arrow-right -rotate-45 text-white group-hover:text-cyber-pink"></i>
-                        </div>
-                        <div class="text-[10px] font-bold text-cyber-pink uppercase tracking-widest mb-2">System Design</div>
-                        <h3 class="text-xl font-bold text-white mb-2">AI 協作應用系統</h3>
-                        <p class="text-gray-400 text-sm mb-6 line-clamp-2">於 Vibe Coding 結訓期間開發的系統，展示人機協同工作的高效模式。</p>
-                        
-                        <a href="#" target="_blank" class="block w-full py-3 text-center text-sm font-bold tracking-widest text-white border border-white/10 rounded-xl hover:bg-white/5 hover:border-cyber-pink transition-all">
-                            VIEW LIVE SITE
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer class="relative z-10 border-t border-white/10 bg-black py-12 text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-2xl font-black text-white mb-8 tracking-wider">
-                <span class="gradient-text">智慧桃園桃園智慧</span> 詹老師
+    <!-- 03. 詹老師的實戰作品展示（三國赤壁連環火 & 好康優惠購物網） -->
+    <section id="works" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 font-black text-sm mb-3">
+                🎯 不用下載・手機點開就能玩
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-3">
+                看看詹老師用 AI 做出來的<span class="text-emerald-600">有趣網站</span>
             </h2>
-            
-            <div class="flex flex-row justify-center items-center gap-6 mb-10">
-                <a href="https://www.facebook.com/share/1FUjxsm4e3/" target="_blank" rel="noopener noreferrer" 
-                   class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#1877F2] hover:bg-[#1877F2]/20 hover:shadow-[0_0_15px_rgba(24,119,242,0.5)] transition-all duration-300" title="Facebook">
-                    <i class="fa-brands fa-facebook-f text-lg"></i>
-                </a>
-                <a href="https://line.me/ti/p/~csjhan" target="_blank" rel="noopener noreferrer" 
-                   class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#06C755] hover:bg-[#06C755]/20 hover:shadow-[0_0_15px_rgba(6,199,85,0.5)] transition-all duration-300" title="LINE">
-                    <i class="fa-brands fa-line text-xl"></i>
-                </a>
-                <a href="mailto:c.s.jhan@gmail.com" 
-                   class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-red-500 hover:bg-red-500/20 hover:shadow-[0_0_15px_rgba(239,68,68,0.5)] transition-all duration-300" title="Email">
-                    <i class="fa-solid fa-envelope text-lg"></i>
-                </a>
-            </div>
-            
-            <p class="text-xs font-en tracking-widest text-gray-600 uppercase">
-                &copy; <span id="year"></span> AI World by Jhan. All rights reserved. 
+            <p class="text-base sm:text-lg text-slate-600 font-medium">
+                下面這兩個網站都是詹老師運用「Vibe Coding AI 協作技術」做出來的，歡迎大家直接點圖片或按鈕進去體驗！
             </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- 作品一：三國赤壁連環火 -->
+            <div class="friendly-card rounded-[2rem] overflow-hidden flex flex-col justify-between">
+                <div>
+                    <div class="bg-orange-500 text-white px-6 py-3 flex items-center justify-between font-black text-sm">
+                        <span>🎮 休閒動腦小遊戲</span>
+                        <span>手機 / 電腦都能玩</span>
+                    </div>
+
+                    <!-- 完整比例自動網址縮圖 -->
+                    <a href="https://csjhan-design.github.io/StoreMemoryMap/" target="_blank" rel="noopener noreferrer" class="block aspect-[16/10] bg-slate-900 overflow-hidden border-b-2 border-amber-200 relative group">
+                        <img src="https://image.thum.io/get/width/1024/https://csjhan-design.github.io/StoreMemoryMap/" 
+                             alt="三國赤壁連環火 網頁畫面" 
+                             class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                             onerror="this.src='https://placehold.co/800x500/FEF3C7/EA580C?text=三國赤壁連環火';">
+                    </a>
+
+                    <div class="p-6 sm:p-8">
+                        <h3 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+                            🔥 三國赤壁連環火
+                        </h3>
+                        <p class="text-base text-slate-700 leading-relaxed font-medium mb-4">
+                            以三國歷史「赤壁之戰」為背景的網頁射擊遊戲！玩家將駕馭戰船突破連環火網，享受充滿視覺張力與刺激感的彈幕射擊與過關斬將體驗。平時在家動動手指、訓練反應力，還能跟家裡的孫子比賽誰分數高！
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 sm:px-8 pb-8">
+                    <a href="https://csjhan-design.github.io/StoreMemoryMap/" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-center font-black text-lg shadow-lg transition-all">
+                        👉 點這裡立刻開始玩遊戲
+                    </a>
+                </div>
+            </div>
+
+            <!-- 作品二：好康優惠購物網 -->
+            <div class="friendly-card rounded-[2rem] overflow-hidden flex flex-col justify-between">
+                <div>
+                    <div class="bg-emerald-600 text-white px-6 py-3 flex items-center justify-between font-black text-sm">
+                        <span>🛍️ 精打細算好幫手</span>
+                        <span>分類清楚一目了然</span>
+                    </div>
+
+                    <!-- 完整比例自動網址縮圖 -->
+                    <a href="https://csjhan-design.github.io/dealsiteforfree/" target="_blank" rel="noopener noreferrer" class="block aspect-[16/10] bg-slate-900 overflow-hidden border-b-2 border-amber-200 relative group">
+                        <img src="https://image.thum.io/get/width/1024/https://csjhan-design.github.io/dealsiteforfree/" 
+                             alt="好康優惠購物網 網頁畫面" 
+                             class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                             onerror="this.src='https://placehold.co/800x500/ECFDF5/059669?text=好康優惠購物網';">
+                    </a>
+
+                    <div class="p-6 sm:p-8">
+                        <h3 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+                            🎁 好康優惠購物網
+                        </h3>
+                        <p class="text-base text-slate-700 leading-relaxed font-medium mb-4">
+                            詹老師結合以前在電商物流部門的經驗，專門為大家整理的超值好康網站！把各種優惠資訊排得清清楚楚、字體好閱讀，讓婆婆媽媽在手機上滑一滑就能輕鬆找到划算好物，買東西不花冤枉錢！
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 sm:px-8 pb-8">
+                    <a href="https://csjhan-design.github.io/dealsiteforfree/" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-center font-black text-lg shadow-lg transition-all">
+                        👉 點這裡進去逛逛好康
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 04. 實務淬鍊與養成 ＆ 國家與國際雙認證（讓里長、理事長與鄉親最放心） -->
+    <section id="history" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 font-black text-sm mb-3">
+                🏅 腳踏實地・專業有保障
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-3">
+                詹老師的<span class="text-orange-600">成長故事與專業證照</span>
+            </h2>
+            <p class="text-base sm:text-lg text-slate-600 font-medium">
+                從工廠機台維護、產品品質把關到電商物流，一步一腳印累積的實務經驗，現在全部用來服務社區鄉親！
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- 左欄 (6欄)：實務淬鍊與養成（工作 + 學歷 直式時間軸） -->
+            <div class="lg:col-span-6 friendly-card rounded-[2rem] p-6 sm:p-8">
+                <div class="flex items-center gap-3 pb-5 mb-6 border-b-2 border-amber-100">
+                    <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-slate-900">實務淬鍊與養成</h3>
+                        <p class="text-sm text-slate-600 font-bold">職場歷練與求學成長軌跡</p>
+                    </div>
+                </div>
+
+                <!-- 直式時間軸 -->
+                <div class="relative border-l-4 border-orange-300 ml-3 pl-6 space-y-6">
+                    
+                    <!-- 1. 知名中小型電商 -->
+                    <div class="relative">
+                        <div class="absolute -left-[34px] top-1.5 w-5 h-5 rounded-full bg-orange-500 border-4 border-white shadow"></div>
+                        <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
+                            <span class="inline-block px-2.5 py-0.5 rounded-lg bg-orange-100 text-orange-800 text-xs font-black mb-1">工作經歷</span>
+                            <h4 class="text-lg font-black text-slate-900">知名中小型電商 — 倉儲物流部門</h4>
+                            <p class="text-sm text-slate-700 mt-1">負責商品分類整理與出貨把關，最懂大家網購時最在意的方便與安全。</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. 手機螢幕 ITO 製造廠 -->
+                    <div class="relative">
+                        <div class="absolute -left-[34px] top-1.5 w-5 h-5 rounded-full bg-amber-500 border-4 border-white shadow"></div>
+                        <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
+                            <span class="inline-block px-2.5 py-0.5 rounded-lg bg-orange-100 text-orange-800 text-xs font-black mb-1">工作經歷</span>
+                            <h4 class="text-lg font-black text-slate-900">手機螢幕 ITO 製造廠 — 品保部門</h4>
+                            <p class="text-sm text-slate-700 mt-1">幫手機觸控螢幕做嚴格的品質檢驗，練就細心、有耐心的好習慣。</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. 印刷電路板廠 -->
+                    <div class="relative">
+                        <div class="absolute -left-[34px] top-1.5 w-5 h-5 rounded-full bg-amber-500 border-4 border-white shadow"></div>
+                        <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
+                            <span class="inline-block px-2.5 py-0.5 rounded-lg bg-orange-100 text-orange-800 text-xs font-black mb-1">工作經歷</span>
+                            <h4 class="text-lg font-black text-slate-900">印刷電路板廠 — 設備工程師</h4>
+                            <p class="text-sm text-slate-700 mt-1">負責精密機器保養與排除故障，任何電腦手機疑難雜症都能冷靜解決。</p>
+                        </div>
+                    </div>
+
+                    <!-- 4. 淡江大學電機工程學系 -->
+                    <div class="relative">
+                        <div class="absolute -left-[34px] top-1.5 w-5 h-5 rounded-full bg-emerald-600 border-4 border-white shadow"></div>
+                        <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200">
+                            <span class="inline-block px-2.5 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-black mb-1">學歷背景</span>
+                            <h4 class="text-lg font-black text-slate-900">淡江大學 — 電機工程學系</h4>
+                            <p class="text-sm text-slate-700 mt-1">紮實的電機與電腦科學訓練，讓教課內容既有條理又淺顯易懂。</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. 中大壢中 -->
+                    <div class="relative">
+                        <div class="absolute -left-[34px] top-1.5 w-5 h-5 rounded-full bg-emerald-600 border-4 border-white shadow"></div>
+                        <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200">
+                            <span class="inline-block px-2.5 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-black mb-1">學歷背景</span>
+                            <h4 class="text-lg font-black text-slate-900">中大壢中（中壢高中）</h4>
+                            <p class="text-sm text-slate-700 mt-1">道地桃園子弟，熱心回饋鄉里，致力推廣「智慧桃園・桃園智慧」。</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 右欄 (6欄)：專業培訓與認證（醒目綠框徽章） -->
+            <div class="lg:col-span-6 friendly-card rounded-[2rem] p-6 sm:p-8">
+                <div class="flex items-center gap-3 pb-5 mb-6 border-b-2 border-emerald-100">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black text-slate-900">專業培訓與認證</h3>
+                        <p class="text-sm text-emerald-700 font-bold">國內外權威機構認可・教學品質保證</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- 1. Nvidia -->
+                    <div class="p-5 rounded-2xl bg-emerald-50/50 border-2 border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <div class="text-xs font-black text-emerald-700">全球 AI 龍頭輝達官方認證</div>
+                            <h4 class="text-lg font-black text-slate-900 mt-0.5">Nvidia 深度學習基礎原理與實踐</h4>
+                            <p class="text-sm text-slate-600 mt-1">通過國際大廠嚴格考核，具備正統 AI 人工智慧核心技術。</p>
+                        </div>
+                        <span class="inline-flex items-center self-start sm:self-center shrink-0 px-4 py-1.5 rounded-full text-sm font-black text-emerald-800 bg-white border-2 border-emerald-600 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mr-1.5"></i>認證合格
+                        </span>
+                    </div>
+
+                    <!-- 2. 龍華科技大學 -->
+                    <div class="p-5 rounded-2xl bg-amber-50/50 border-2 border-amber-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <div class="text-xs font-black text-orange-700">桃園在地大學實戰專班</div>
+                            <h4 class="text-lg font-black text-slate-900 mt-0.5">龍華科技大學「Vibe Coding AI 協作應用系統設計」</h4>
+                            <p class="text-sm text-slate-600 mt-1">專精「用講話就能做網頁與小遊戲」的最新 AI 協作技術。</p>
+                        </div>
+                        <span class="inline-flex items-center self-start sm:self-center shrink-0 px-4 py-1.5 rounded-full text-sm font-black text-emerald-800 bg-white border-2 border-emerald-600 shadow-sm">
+                            <i class="fa-solid fa-check text-emerald-600 mr-1.5"></i>結訓
+                        </span>
+                    </div>
+
+                    <!-- 3. 中原大學 -->
+                    <div class="p-5 rounded-2xl bg-amber-50/50 border-2 border-amber-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <div class="text-xs font-black text-orange-700">中壢知名學府實戰工作坊</div>
+                            <h4 class="text-lg font-black text-slate-900 mt-0.5">中原大學「Python 程式設計與 AI 數據分析實戰工作坊」</h4>
+                            <p class="text-sm text-slate-600 mt-1">擅長將複雜資料整理成清楚圖表，讓生活與理財決策更聰明。</p>
+                        </div>
+                        <span class="inline-flex items-center self-start sm:self-center shrink-0 px-4 py-1.5 rounded-full text-sm font-black text-emerald-800 bg-white border-2 border-emerald-600 shadow-sm">
+                            <i class="fa-solid fa-check text-emerald-600 mr-1.5"></i>結訓
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 05. 歡迎社區、里辦公處、媽媽教室邀約與聯繫 -->
+    <section id="contact" class="py-16 px-4 max-w-5xl mx-auto">
+        <div class="friendly-card rounded-[2.5rem] p-7 sm:p-12 bg-gradient-to-br from-amber-50 via-white to-emerald-50 border-4 border-amber-300 text-center">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-rose-100 text-rose-700 font-black text-sm mb-3">
+                🤝 歡迎社區發展協會・里辦公處・樂齡學堂邀約
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mb-4">
+                想請詹老師來社區教大家玩 AI 嗎？
+            </h2>
+            <p class="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed font-medium mb-8">
+                無論是<strong class="text-orange-700">社區長青學苑、媽媽教室、企業社團</strong>，或是想請老師幫忙製作<strong class="text-emerald-700">活動網頁與小遊戲</strong>，都歡迎直接加 LINE 跟詹老師聊一聊！
+            </p>
+
+            <!-- 一鍵複製邀約訊息小幫手（方便里長或幹部直接複製傳 LINE） -->
+            <div class="max-w-2xl mx-auto mb-10 p-5 rounded-2xl bg-white border-2 border-dashed border-orange-300">
+                <div class="text-sm font-black text-slate-800 mb-3">
+                    📋 不知道怎麼開口？點下面按鈕幫您寫好招呼語：
+                </div>
+                <button onclick="copyInviteMessage()" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-black text-base shadow-md transition-all inline-flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>點我複製「邀請詹老師開課」招呼語</span>
+                </button>
+            </div>
+
+            <!-- 三大超大聯繫卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+                
+                <!-- 1. LINE 好友 (最推薦) -->
+                <a href="https://line.me/ti/p/~csjhan" target="_blank" rel="noopener noreferrer" class="p-6 rounded-3xl bg-[#06C755] hover:bg-emerald-600 text-white shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fa-brands fa-line text-4xl"></i>
+                            <span class="px-3 py-1 rounded-full bg-white/20 text-xs font-black">最快速聯繫</span>
+                        </div>
+                        <h3 class="text-2xl font-black">加老師 LINE 好友</h3>
+                        <p class="text-base font-bold text-white/95 mt-1">LINE ID：csjhan</p>
+                    </div>
+                    <div class="mt-6 py-3 px-4 rounded-xl bg-white text-emerald-700 text-center font-black text-base group-hover:scale-[1.02] transition-transform">
+                        點這裡直接加 LINE 👉
+                    </div>
+                </a>
+
+                <!-- 2. Facebook 臉書 -->
+                <a href="https://www.facebook.com/share/1FUjxsm4e3/" target="_blank" rel="noopener noreferrer" class="p-6 rounded-3xl bg-[#1877F2] hover:bg-blue-700 text-white shadow-xl transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <i class="fa-brands fa-facebook text-4xl"></i>
+                            <span class="px-3 py-1 rounded-full bg-white/20 text-xs font-black">上課花絮分享</span>
+                        </div>
+                        <h3 class="text-2xl font-black">老師的臉書專頁</h3>
+                        <p class="text-base font-bold text-white/95 mt-1">看桃園社區教學點滴</p>
+                    </div>
+                    <div class="mt-6 py-3 px-4 rounded-xl bg-white text-blue-700 text-center font-black text-base group-hover:scale-[1.02] transition-transform">
+                        前往 FB 按讚追蹤 👉
+                    </div>
+                </a>
+
+                <!-- 3. 電子信箱 -->
+                <div class="p-6 rounded-3xl bg-white border-2 border-slate-300 text-slate-900 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-orange-600 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-black">公文信箱</span>
+                        </div>
+                        <h3 class="text-2xl font-black">寫電子信件</h3>
+                        <p class="text-sm font-bold text-slate-600 mt-1 break-all">c.s.jhan@gmail.com</p>
+                    </div>
+                    <div class="mt-6 space-y-2">
+                        <a href="mailto:c.s.jhan@gmail.com" class="block w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-center font-black text-sm transition-all">
+                            開啟信箱寄信
+                        </a>
+                        <button onclick="copyEmailAddress()" class="w-full py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 font-black text-sm transition-all">
+                            <i class="fa-regular fa-copy mr-1"></i>複製信箱帳號
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="py-10 px-4 bg-amber-100/70 border-t-2 border-amber-200 text-center">
+        <div class="max-w-5xl mx-auto space-y-2">
+            <div class="text-lg font-black text-slate-900">
+                智慧桃園 桃園智慧 詹老師
+            </div>
+            <p class="text-sm text-slate-700 font-medium">
+                陪伴每一位桃園鄉親與社區長輩，輕鬆擁抱快樂又安心的 AI 智慧生活！
+            </p>
+            <div class="text-xs text-slate-500 pt-2">
+                &copy; <span id="year-now"></span> 智慧桃園 桃園智慧 詹老師 版權所有
+            </div>
         </div>
     </footer>
 
-    <script>
-        // 設定版權年份
-        document.getElementById('year').textContent = new Date().getFullYear();
+    <!-- 貼心大字提示框（取代 alert） -->
+    <div id="friendly-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-3 px-6 py-4 rounded-2xl bg-slate-900 text-white text-base font-black shadow-2xl border-2 border-amber-400 max-w-[92vw]">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl shrink-0"></i>
+        <span id="friendly-toast-text">已經幫您複製好囉！</span>
+    </div>
 
-        // 導覽列滾動與玻璃特效調整
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar').firstElementChild;
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-black/60', 'border-white/20');
-                navbar.classList.remove('bg-transparent', 'border-white/5');
-            } else {
-                navbar.classList.remove('bg-black/60', 'border-white/20');
-                navbar.classList.add('bg-transparent', 'border-white/5');
+    <script>
+        // 自動顯示今年年份
+        document.getElementById('year-now').textContent = new Date().getFullYear();
+
+        // 貼心提醒通知（大字好閱讀）
+        function showFriendlyToast(message) {
+            const toast = document.getElementById('friendly-toast');
+            document.getElementById('friendly-toast-text').textContent = message;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3200);
+        }
+
+        // 一鍵調整全站字體大小（標準 16px / 大字 18px / 超大 21px）
+        function setFontSize(size, btnEl) {
+            document.documentElement.style.fontSize = size;
+            document.querySelectorAll('.font-btn').forEach(btn => {
+                btn.className = 'font-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-600 hover:bg-white transition-all';
+            });
+            btnEl.className = 'font-btn px-2.5 py-1 rounded-lg text-xs font-bold bg-orange-600 text-white shadow-sm transition-all';
+            
+            const label = size === '21px' ? '超大字體' : (size === '18px' ? '大字體' : '標準字體');
+            showFriendlyToast(`已幫您切換成「${label}」囉！`);
+        }
+
+        // 社區生活 AI 妙招互動資料
+        const lifeTipsData = {
+            morning: {
+                title: '🌸 自己做「專屬早安圖」與旅遊回憶錄！',
+                desc: '不用再轉傳網路上重複的長輩圖啦！詹老師教大家用手機拍下自己種的花、或是去石門水庫出遊的照片，只要跟 AI 說一句話，一秒幫你配上溫暖詩句與漂亮字體，傳到 LINE 群組裡大家都稱讚你有才華！',
+                prompt: '「請幫我寫一段親切溫暖的早安祝福語，適合傳給社區好朋友，祝大家身體健康、心情愉快！」'
+            },
+            cooking: {
+                title: '🍲 冰箱剩菜變大餐・AI 專屬營養師！',
+                desc: '每天都在煩惱今晚要煮什麼菜嗎？只要打開手機對著冰箱裡的食材拍張照，或是直接用講的告訴 AI，它馬上幫你配出三菜一湯的健康食譜，還能貼心避開高油高鹽，照顧全家人的健康！',
+                prompt: '「我冰箱裡有高麗菜、雞蛋、豆腐和半條紅蘿蔔，請幫我設計兩道清淡少油、適合長輩吃的家常菜做法！」'
+            },
+            safety: {
+                title: '🛡️ 防詐騙小幫手・藥袋英文一秒翻譯！',
+                desc: '現在詐騙簡訊和假投資群組很多，收到怪怪的訊息先別慌！詹老師教大家把訊息貼給 AI 幫忙檢查，馬上識破詐騙陷阱；去醫院拿藥看不懂英文藥單，手機一拍也立刻翻成清楚中文！',
+                prompt: '「我收到一封簡訊說我包裹沒領要點網址填資料，請幫我判斷這是不是詐騙簡訊？」'
+            },
+            grandkids: {
+                title: '👨‍👩‍👧‍👦 陪金孫做小遊戲・全家大小一起同樂！',
+                desc: '就像詹老師做的《三國赤壁連環火》一樣，現在不需要會寫複雜程式，只要用說的就能跟 AI 一起做出好玩的小遊戲或電子相簿，過年過節拿出來跟孫子同樂，變成全家族最潮的阿公阿嬤！',
+                prompt: '「請幫我設計一個適合阿公阿嬤跟國小孫子一起玩的成語猜謎互動小題庫，要有十題喔！」'
             }
-        });
+        };
+
+        let currentSamplePrompt = lifeTipsData.morning.prompt;
+
+        function selectLifeTip(key, btnEl) {
+            const data = lifeTipsData[key];
+            if (!data) return;
+
+            document.querySelectorAll('.life-btn').forEach(btn => {
+                btn.className = 'life-btn p-5 rounded-2xl text-left border-2 border-slate-200 bg-white hover:border-amber-400 transition-all';
+            });
+            btnEl.className = 'life-btn p-5 rounded-2xl text-left border-4 border-orange-500 bg-orange-50 shadow-md transition-all';
+
+            document.getElementById('tip-title').textContent = data.title;
+            document.getElementById('tip-desc').textContent = data.desc;
+            document.getElementById('tip-prompt').textContent = data.prompt;
+            currentSamplePrompt = data.prompt;
+        }
+
+        // 複製示範問句
+        function copySamplePrompt() {
+            copyToClipboard(currentSamplePrompt, '已複製這句話！您可以直接貼到 LINE 或 ChatGPT 試試看喔！');
+        }
+
+        // 複製社區開課邀約招呼語
+        function copyInviteMessage() {
+            const inviteText = '詹老師您好！我們是社區的夥伴，看到您的網站覺得非常親切實用，想邀請您來為社區的婆婆媽媽、長輩朋友們上一堂輕鬆好玩的 AI 生活應用課，方便跟您請教時間與課程內容嗎？';
+            copyToClipboard(inviteText, '已幫您複製好招呼語！現在點下方綠色「加 LINE 好友」就能直接貼上傳送囉！');
+        }
+
+        // 複製信箱
+        function copyEmailAddress() {
+            copyToClipboard('c.s.jhan@gmail.com', '已幫您複製老師的信箱：c.s.jhan@gmail.com');
+        }
+
+        // 通用剪貼簿複製函式
+        function copyToClipboard(text, toastMsg) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showFriendlyToast(toastMsg);
+        }
     </script>
 </body>
 </html>
